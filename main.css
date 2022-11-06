@@ -33,11 +33,26 @@ body {
     color: var(--dark);
 }
 
+.app {
+    max-width: 768px;
+    min-width: 450px;
+    margin: 0 auto;
+}
+
+.log-in-app {
+    width: 450px;
+    margin: auto;   
+}
+
 section {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
 }
 
 h3 {
@@ -71,7 +86,9 @@ h4 {
     font-weight: 700;
 }
 
-.create-todo input[type="text"] {
+.create-todo input[type="text"],
+.log-in input[type="text"], 
+.log-in input[type="password"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
@@ -152,7 +169,8 @@ input:checked ~ .bubble::after {
     margin-top: 1rem;
 }
 
-.create-todo input[type="submit"] {
+.create-todo input[type="submit"],
+.log-in input[type="submit"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
@@ -165,7 +183,8 @@ input:checked ~ .bubble::after {
     transition: 0.2s ease-in-out;
 }
 
-.create-todo input[type="submit"]:hover {
+.create-todo input[type="submit"]:hover,
+.log-in input[type="submit"]:hover {
     opacity: 0.75;
 }
 
