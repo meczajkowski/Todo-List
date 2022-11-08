@@ -1,3 +1,7 @@
+/* ====================================================================== */
+/* VARIABLES */
+/* ====================================================================== */
+
 :root {
     --primary: #ea40a4;
     --business: #3a82ee;
@@ -13,6 +17,11 @@
     --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 
+
+
+/* ====================================================================== */
+/* GLOBAL SETTINGS */
+/* ====================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +37,18 @@ input:not([type="radio"]):not([type="checkbox"]), button {
     cursor: initial;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+/* ====================================================================== */
+/* MIN WIDTH SETTINGS */
+/* ====================================================================== */
+html {
+    min-width: 255px;
+}
+
 body {
     background: var(--light);
     color: var(--dark);
@@ -35,15 +56,15 @@ body {
 
 .app {
     max-width: 768px;
-    min-width: 450px;
     margin: 0 auto;
 }
 
 .log-in-app {
-    width: 450px;
+    max-width: 450px;
     margin: auto;   
 }
 
+/* ====================================================================== */
 section {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -69,12 +90,15 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+/* ====================================================================== */
+/* GREETING SECTION SETTINGS */
+/* ====================================================================== */
 .greeting .title {
     display: flex;
+    flex-direction: column;
 }
 
 .greeting .title input {
-    margin-left: 0.5rem;
     flex: 1 1 0%;
     min-width: 0;
 }
@@ -86,6 +110,9 @@ h4 {
     font-weight: 700;
 }
 
+/* ====================================================================== */
+/* CREATE TODO SECTION | LOG IN SECTION SETTINGS*/
+/* ====================================================================== */
 .create-todo input[type="text"],
 .log-in input[type="text"], 
 .log-in input[type="password"] {
@@ -112,17 +139,23 @@ h4 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 0.5rem;
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
     cursor: pointer;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    display: none;
+.create-todo .options label div {
+    color: var(--dark);
+    font-size: 1.125rem;
+    margin-top: 1rem;
 }
+
+/* ====================================================================== */
+/* CUSTOM RADIOBTN & CHECKBOX SETTNGS  */
+/* ====================================================================== */
+
 
 .bubble {
     display: flex;
@@ -162,12 +195,9 @@ input:checked ~ .bubble::after {
     height: 10px;
     opacity: 1;
 }
-
-.create-todo .options label div {
-    color: var(--dark);
-    font-size: 1.125rem;
-    margin-top: 1rem;
-}
+/* ====================================================================== */
+/* SUBMIT BTN SETTINGS */
+/* ====================================================================== */
 
 .create-todo input[type="submit"],
 .log-in input[type="submit"] {
@@ -188,13 +218,17 @@ input:checked ~ .bubble::after {
     opacity: 0.75;
 }
 
+/* ====================================================================== */
+/* TODO LIST SETTINGS */
+/* ====================================================================== */
+
 .todo-list .list {
     margin: 1rem 0;
 }
 
+/* TODO LIST ITEM SETTINGS */
+
 .todo-list .todo-item {
-    display: flex;
-    align-items: center;
     background-color: #fff;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -202,28 +236,38 @@ input:checked ~ .bubble::after {
     margin-bottom: 1rem;
 }
 
-.todo-item label {
-    display: block;
-    margin-right: 1rem;
+.todo-item .todo-inline {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;;
+}
+
+.todo-item .todo-checkbox {
     cursor: pointer;
 }
 
-.todo-item .todo-content {
-    flex: 1 1 0%;
+.todo-item .todo-inline .todo-content {
+    overflow-wrap: break-word;
+    width: 85%;
+    color: var(--dark);
+    font-size: 1.125rem;    
 }
 
-.todo-item .todo-content input {
-    color: var(--dark);
-    font-size: 1.125rem;
-}
+/* ====================================================================== */
+/* TODO ITEM ACTIONS BTN SETTINGS */
+/* ====================================================================== */
 
 .todo-item .actions {
+    width: 100%;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .todo-item .actions button {
-    display: block;
     padding: 0.5rem;
     border-radius: 0.25rem;
     color: #fff;
@@ -236,7 +280,6 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .actions .edit {
-    margin-right: 0.5rem;
     background-color: var(--primary);
 }
 
@@ -244,7 +287,27 @@ input:checked ~ .bubble::after {
     background-color: var(--danger);
 }
 
-.todo-item.done .todo-content input {
+/* ====================================================================== */
+/* TODO LIST ITEM DONE SETTINGS */
+/* ====================================================================== */
+
+.todo-item.done .todo-content {
     text-decoration: line-through;
     color: var(--grey);
+}
+
+/* ====================================================================== */
+/* RESPONSIVE SETTINGS */
+/* ====================================================================== */
+
+@media  screen and (min-width: 320px) {
+    .create-todo .options label {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+}
+
+@media  screen and (min-width: 380px) {
+    .create-todo .options label {
+        padding: 1.5rem;
+    }
 }
