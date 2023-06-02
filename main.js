@@ -87,5 +87,16 @@ todoList.addEventListener('click', (event) => {
       allTodos.findIndex((todo) => todo.createdAt === todoItemID)
     );
     displayAllTodos(allTodos);
+    localStorage.setItem('allTodos', JSON.stringify(allTodos));
+  }
+
+  if (clickedElement === clickedElement.closest('.edit')) {
+    const newTodoItemContent = prompt('please provide new content');
+
+    const [theOne] = allTodos.filter((todo) => todo.createdAt === todoItemID);
+
+    theOne.content = newTodoItemContent;
+    displayAllTodos(allTodos);
+    localStorage.setItem('allTodos', JSON.stringify(allTodos));
   }
 });
