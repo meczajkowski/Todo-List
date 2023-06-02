@@ -3,219 +3,217 @@
 /* ====================================================================== */
 
 :root {
-    --primary: #ea40a4;
-    --business: #3a82ee;
-    --personal:var(--primary);
-    --light: #eee;
-    --grey: #888;
-    --dark: #313154;
-    --danger: #ff5b57;
+  --primary: #ea40a4;
+  --business: #3a82ee;
+  --personal: var(--primary);
+  --light: #eee;
+  --grey: #888;
+  --dark: #313154;
+  --danger: #ff5b57;
 
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-    --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
-    --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+  --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+  --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
-
-
 
 /* ====================================================================== */
 /* GLOBAL SETTINGS */
 /* ====================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-input:not([type="radio"]):not([type="checkbox"]), button {
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: initial;
+input:not([type='radio']):not([type='checkbox']),
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    display: none;
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
 }
 
 /* ====================================================================== */
 /* MIN WIDTH SETTINGS */
 /* ====================================================================== */
 html {
-    min-width: 255px;
+  min-width: 255px;
 }
 
 body {
-    background: var(--light);
-    color: var(--dark);
+  background: var(--light);
+  color: var(--dark);
 }
 
 .app {
-    max-width: 768px;
-    margin: 0 auto;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 .log-in-app {
-    max-width: 450px;
-    margin: auto;   
+  max-width: 450px;
+  margin: auto;
 }
 
 /* ====================================================================== */
 section {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 h1 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 h3 {
-    color: var(--dark);
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 h4 {
-    color: var(--grey);
-    font-size: 0.875rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+  color: var(--grey);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 /* ====================================================================== */
 /* GREETING SECTION SETTINGS */
 /* ====================================================================== */
 .greeting .title {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting .title input {
-    flex: 1 1 0%;
-    min-width: 0;
+  flex: 1 1 0%;
+  min-width: 0;
 }
 
 .greeting .title,
 .greeting .title input {
-    color: var(--dark);
-    font-size: 1.5rem;
-    font-weight: 700;
+  color: var(--dark);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* ====================================================================== */
 /* CREATE TODO SECTION | LOG IN SECTION SETTINGS*/
 /* ====================================================================== */
-.create-todo input[type="text"],
-.log-in input[type="text"], 
-.log-in input[type="password"] {
-    display: block;
-    width: 100%;
-    font-size: 1.125rem;
-    padding: 1rem 1.5rem;
-    color: var(--dark);
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
+.create-todo input[type='text'],
+.log-in input[type='text'],
+.log-in input[type='password'] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: var(--dark);
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
 }
 
 .create-todo .options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .create-todo .options label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .create-todo .options label div {
-    color: var(--dark);
-    font-size: 1.125rem;
-    margin-top: 1rem;
+  color: var(--dark);
+  font-size: 1.125rem;
+  margin-top: 1rem;
 }
 
 /* ====================================================================== */
 /* CUSTOM RADIOBTN & CHECKBOX SETTNGS  */
 /* ====================================================================== */
 
-
 .bubble {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--business);
-    box-shadow: var(--business-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--business);
+  box-shadow: var(--business-glow);
 }
 
 .bubble.personal {
-    border-color: var(--personal);
-    box-shadow: var(--personal-glow);
+  border-color: var(--personal);
+  box-shadow: var(--personal-glow);
 }
 
 .bubble::after {
-    content: "";
-    display: block;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    background-color: var(--business);
-    box-shadow: var(--business-glow);
-    border-radius: 50%;
-    transition: 0.2s ease-in-out;
+  content: '';
+  display: block;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  background-color: var(--business);
+  box-shadow: var(--business-glow);
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
 }
 
 .bubble.personal::after {
-    background-color: var(--personal);
-    box-shadow: var(--personal-glow);
+  background-color: var(--personal);
+  box-shadow: var(--personal-glow);
 }
 
 input:checked ~ .bubble::after {
-    width: 10px;
-    height: 10px;
-    opacity: 1;
+  width: 10px;
+  height: 10px;
+  opacity: 1;
 }
 /* ====================================================================== */
 /* SUBMIT BTN SETTINGS */
 /* ====================================================================== */
 
-.create-todo input[type="submit"],
-.log-in input[type="submit"] {
-    display: block;
-    width: 100%;
-    font-size: 1.125rem;
-    padding: 1rem 1.5rem;
-    color: #fff;
-    background-color: var(--primary);
-    border-radius: 0.5rem ;
-    box-shadow: var(--personal-glow);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+.create-todo input[type='submit'],
+.log-in input[type='submit'] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: var(--personal-glow);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
-.create-todo input[type="submit"]:hover,
-.log-in input[type="submit"]:hover {
-    opacity: 0.75;
+.create-todo input[type='submit']:hover,
+.log-in input[type='submit']:hover {
+  opacity: 0.75;
 }
 
 /* ====================================================================== */
@@ -223,36 +221,36 @@ input:checked ~ .bubble::after {
 /* ====================================================================== */
 
 .todo-list .list {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 /* TODO LIST ITEM SETTINGS */
 
 .todo-list .todo-item {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
 }
 
 .todo-item .todo-inline {
-    width: 100%;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    margin-bottom: 1rem;;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .todo-item .todo-checkbox {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .todo-item .todo-inline .todo-content {
-    overflow-wrap: break-word;
-    width: 85%;
-    color: var(--dark);
-    font-size: 1.125rem;    
+  overflow-wrap: break-word;
+  width: 85%;
+  color: var(--dark);
+  font-size: 1.125rem;
 }
 
 /* ====================================================================== */
@@ -260,31 +258,31 @@ input:checked ~ .bubble::after {
 /* ====================================================================== */
 
 .todo-item .actions {
-    width: 100%;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .todo-item .actions button {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .todo-item .actions button:hover {
-    opacity: 0.75;
+  opacity: 0.75;
 }
 
 .todo-item .actions .edit {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .todo-item .actions .delete {
-    background-color: var(--danger);
+  background-color: var(--danger);
 }
 
 /* ====================================================================== */
@@ -292,22 +290,22 @@ input:checked ~ .bubble::after {
 /* ====================================================================== */
 
 .todo-item.done .todo-content {
-    text-decoration: line-through;
-    color: var(--grey);
+  text-decoration: line-through;
+  color: var(--grey);
 }
 
 /* ====================================================================== */
 /* RESPONSIVE SETTINGS */
 /* ====================================================================== */
 
-@media  screen and (min-width: 320px) {
-    .create-todo .options label {
-        padding: 1rem 0.5rem 1rem 0.5rem;
-    }
+@media screen and (min-width: 320px) {
+  .create-todo .options label {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
 }
 
-@media  screen and (min-width: 380px) {
-    .create-todo .options label {
-        padding: 1.5rem;
-    }
+@media screen and (min-width: 380px) {
+  .create-todo .options label {
+    padding: 1.5rem;
+  }
 }
