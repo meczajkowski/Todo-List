@@ -9,10 +9,12 @@ const displayAllTodos = (allTodos) => {
   allTodos.forEach((todo) => {
     console.log(todo);
     const markup = `
-        <div class="todo-item">
+        <div class="todo-item ${todo.done ? 'done' : ''}" data-id="${
+      todo.createdAt
+    }">
             <label class="todo-inline">
                 <label class="todo-checkbox">
-                    <input type="checkbox" />
+                    <input type="checkbox" ${todo.done ? 'checked' : ''} />
                     <span class="bubble ${todo.category}"></span>
                 </label>
                 <p class="todo-content">
@@ -65,3 +67,19 @@ userNameInput.addEventListener('input', () => {
 });
 
 newTodoForm.addEventListener('submit', handleAddTodo);
+
+todoList.addEventListener('click', (event) => {
+  const clickedElement = event.target;
+
+  //   handling the 'done' state
+  if (clickedElement === clickedElement.closest('input')) {
+    const todoItem = clickedElement.closest('.todo-item');
+    const [theOne] = allTodos.filter(
+      (todo) => todo.createdAt === +todoItem.getAttribute('data-id')
+    );
+    theOne.done = !theOne.done;
+    todoItem.classList.toggle('done');
+
+    localStorage.setItem('allTodos', JSON.stringify(allTodos));
+  }
+});
