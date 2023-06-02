@@ -70,16 +70,22 @@ newTodoForm.addEventListener('submit', handleAddTodo);
 
 todoList.addEventListener('click', (event) => {
   const clickedElement = event.target;
+  const todoItem = clickedElement.closest('.todo-item');
+  const todoItemID = +todoItem.getAttribute('data-id');
 
   //   handling the 'done' state
   if (clickedElement === clickedElement.closest('input')) {
-    const todoItem = clickedElement.closest('.todo-item');
-    const [theOne] = allTodos.filter(
-      (todo) => todo.createdAt === +todoItem.getAttribute('data-id')
-    );
+    const [theOne] = allTodos.filter((todo) => todo.createdAt === todoItemID);
     theOne.done = !theOne.done;
     todoItem.classList.toggle('done');
 
     localStorage.setItem('allTodos', JSON.stringify(allTodos));
+  }
+
+  if (clickedElement === clickedElement.closest('.delete')) {
+    allTodos.splice(
+      allTodos.findIndex((todo) => todo.createdAt === todoItemID)
+    );
+    displayAllTodos(allTodos);
   }
 });
