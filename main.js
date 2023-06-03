@@ -1,3 +1,5 @@
+import './main.css';
+
 const userNameInput = document.querySelector('#name');
 const newTodoForm = document.querySelector('#new-todo-form');
 const newTodoInput = document.querySelector('#content');
@@ -84,7 +86,8 @@ todoList.addEventListener('click', (event) => {
 
   if (clickedElement === clickedElement.closest('.delete')) {
     allTodos.splice(
-      allTodos.findIndex((todo) => todo.createdAt === todoItemID)
+      allTodos.findIndex((todo) => todo.createdAt === todoItemID),
+      1
     );
     displayAllTodos(allTodos);
     localStorage.setItem('allTodos', JSON.stringify(allTodos));
